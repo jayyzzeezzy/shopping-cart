@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      <h1>Our First Test</h1>
+      <h1>THE ONLINE SHOP</h1>
     </>
   )
 }
