@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import ItemCard from "./ItemCard";
 
 function Shop() {
-    const [fakeStoreAPI, setFakeStoreAPI] = useState('');
+    const [fakeStoreAPI, setFakeStoreAPI] = useState([]);
 
 
     useEffect(() => {
@@ -10,7 +11,7 @@ function Shop() {
             {mode: "cors"},
         )
         .then(response => response.json())
-        .then(json => setFakeStoreAPI(json))
+        .then(json => setFakeStoreAPI([...json]))
         .catch(error => console.error(error))
     }, []);
     console.log(fakeStoreAPI);
@@ -19,6 +20,28 @@ function Shop() {
     return (
         <>
             <h1>SHOP</h1>
+            <ul className="item-grid-container">
+                {}
+                {fakeStoreAPI.map((item) => {
+                    return (
+                        <>
+                        <li>
+                            <ItemCard 
+                            key={item.id} 
+                            name={item.title} 
+                            price={item.price}
+                            />
+                        </li>
+                        </>
+                    );
+                })
+                }
+                {/* use map to spit out <li> */}
+                <li>one</li>
+                <li>bar</li>
+                <li>baz</li>
+                
+            </ul>
         </>
     )
 }
