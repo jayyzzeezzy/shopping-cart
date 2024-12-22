@@ -30,6 +30,7 @@ function Shop() {
                             key={item.id} 
                             name={item.title} 
                             price={item.price}
+                            image={item.image}
                             />
                         </li>
                         </>
