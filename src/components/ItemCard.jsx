@@ -13,10 +13,18 @@ function ItemCard({
             className="product-link" 
             state={{ name, price, image, }}
             >
-                <img src={image} alt="" />
+                <img 
+                src={image} 
+                alt="" 
+                className="product-image" 
+                />
                 <div className="card-info">
-                    <p>{name}</p>
-                    <p>{price}</p>
+                    <p className="product-name">
+                        {name}
+                    </p>
+                    <p className="product-price">
+                        {price}
+                    </p>
                 </div>
             </Link>
         </>

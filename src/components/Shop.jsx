@@ -25,7 +25,7 @@ function Shop() {
                 {fakeStoreAPI.map((item) => {
                     return (
                         <>
-                        <li>
+                        <li className="item-card">
                             <ItemCard 
                             key={item.id} 
                             name={item.title} 
