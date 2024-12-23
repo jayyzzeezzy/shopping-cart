@@ -5,13 +5,14 @@ function ItemCard({
     name,
     price,
     image,
+    description,
 }) {
     return (
         <>
             <Link 
             to="product" 
             className="product-link" 
-            state={{ name, price, image, }}
+            state={{ name, price, image, description, }}
             >
                 <img 
                 src={image} 
@@ -35,6 +36,7 @@ ItemCard.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     image: PropTypes.string,
+    description: PropTypes.string,
 };
 
 export default ItemCard;

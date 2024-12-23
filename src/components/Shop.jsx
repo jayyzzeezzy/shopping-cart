@@ -21,7 +21,6 @@ function Shop() {
         <>
             <h1>SHOP</h1>
             <ul className="item-grid-container">
-                {}
                 {fakeStoreAPI.map((item) => {
                     return (
                         <>
@@ -31,6 +30,7 @@ function Shop() {
                             name={item.title} 
                             price={item.price}
                             image={item.image}
+                            description={item.description}
                             />
                         </li>
                         </>
