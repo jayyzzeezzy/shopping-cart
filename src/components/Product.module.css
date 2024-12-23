@@ -1,0 +1,7 @@
+.detailContainer {
+    position: relative;
+}
+
+.detailImage {
+    max-width: 300px;
+}
