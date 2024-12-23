@@ -41,9 +41,7 @@ function Product() {
                 </div>
             </div>
         </div>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-            Cart
-        </Modal>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)} />
         </>
     );
 };
