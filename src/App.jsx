@@ -1,17 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
+import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="shop">Shop</Link>
-          </li>
-        </ul>
-      </nav>
-      <h1>THE ONLINE SHOP</h1>
+      <Navbar />
+      <Outlet />
     </>
   )
 }
