@@ -24,9 +24,10 @@ function Shop() {
                 {fakeStoreAPI.map((item) => {
                     return (
                         <>
-                        <li className="item-card">
+                        <li className="item-card" key={item.id}>
+                            {/* pass item info via props */}
                             <ItemCard 
-                            key={item.id} 
+                            id={item.id} 
                             name={item.title} 
                             price={item.price}
                             image={item.image}
