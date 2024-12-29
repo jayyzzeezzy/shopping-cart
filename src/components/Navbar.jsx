@@ -11,6 +11,11 @@ function Navbar() {
                     <Link to="shop">Shop</Link>
                 </li>
             </ul>
+            <div>
+                <li>
+                    <Link to="cart">Cart</Link>
+                </li>
+            </div>
         </nav>
     )
 };

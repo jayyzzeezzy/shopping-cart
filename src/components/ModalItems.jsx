@@ -20,10 +20,11 @@ function ModalItems({
         }
     }, [cartList]);
 
-    function incItem(id) {
+    function incItem(e) {
+        const targetId = e.target.parentElement.id;
         setCartList((prevList) =>{
             const updatedList = prevList.map((item) => {
-                if (item.id == id) {
+                if (item.id == targetId) {
                     return {...item, quantity: item.quantity + 1}
                 }
                 return item;
@@ -32,10 +33,11 @@ function ModalItems({
         })
     }
 
-    function decItem(id) {
+    function decItem(e) {
+        const targetId = e.target.parentElement.id;
         setCartList((prevList) => {
             const updatedList = prevList.map((item) => {
-                if (item.id == id) {
+                if (item.id == targetId) {
                     return {...item, quantity: item.quantity - 1}
                 }
             })
@@ -44,33 +46,35 @@ function ModalItems({
     }
 
 
-    function delItem(id) {
+    function delItem(e) {
+        const targetId = e.target.parentElement.id;
         setCartList((prevList) => {
-            return prevList.filter((item) => item.id != id);
+            return prevList.filter((item) => item.id != targetId);
         })
     }
 
     return (
         <>
         <h3>Subtotal</h3>
-        <h3>${subtotal}</h3>
+        <h3>${Math.round(subtotal * 100) /100}</h3>
         
         <ul>
             {cartList.map((item) => {
-                if (!item) return console.log(null);
-
+                // if (!item) return null;
+                
                 return (
                     <li className={styles.modalItem} key={item.id}>
                         <img src={item.img} alt="" />
                         <p>${item.price}</p>
-                        <div className="modalItemEdit">
-                            {/* remove decrement if quantity is 0 */}
-                            {(item.quantity == 0) ? null : (<button onClick={() => decItem(item.id)}>-</button>)}
+                        <div className="modalItemEdit" id={item.id}>
+                            {/* remove decrement if quantity is 1 */}
+                            {(item.quantity == 0) ? null : (<button onClick={(e) => decItem(e)}>-</button>)}
                             <p>{item.quantity}</p>
-                            <button onClick={() => incItem(item.id)}>+</button>
+                            <button onClick={(e) => incItem(e)}>+</button>
                         </div>
-                        <div className="modalItemDelete">
-                            <button onClick={() => delItem(item.id)}>&#128465;</button>
+                        <div className="modalItemDelete" id={item.id}>
+                            {/* using unicode (&#128465;) for the trash can icon */}
+                            <button onClick={(e) => delItem(e)}>&#128465;</button>
                         </div>
                     </li>
                 )
