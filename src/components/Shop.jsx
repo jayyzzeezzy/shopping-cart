@@ -4,17 +4,23 @@ import ItemCard from "./ItemCard";
 function Shop() {
     const [fakeStoreAPI, setFakeStoreAPI] = useState([]);
 
+    async function getFakeStoreAPI() {
+        try {
+            const response = await fetch(
+                "https://fakestoreapi.com/products", 
+                {mode: "cors"},
+            );
+            const fetchResult = await response.json();
+            console.log(fetchResult);
+            setFakeStoreAPI(fetchResult);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     useEffect(() => {
-        fetch(
-            "https://fakestoreapi.com/products", 
-            {mode: "cors"},
-        )
-        .then(response => response.json())
-        .then(json => setFakeStoreAPI([...json]))
-        .catch(error => console.error(error))
+        getFakeStoreAPI();
     }, []);
-    console.log(fakeStoreAPI);
     
 
     return (
@@ -24,7 +30,7 @@ function Shop() {
                 {fakeStoreAPI.map((item) => {
                     return (
                         <>
-                        <li className="item-card" key={item.id}>
+                        <li className="item-card" key={item.id} id={item.id}>
                             {/* pass item info via props */}
                             <ItemCard 
                             id={item.id} 
