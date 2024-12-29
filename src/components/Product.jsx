@@ -63,7 +63,7 @@ function Product() {
             <div className="detail-right">
                 <div className="detail-info">
                     <p className="detail-name">{product.name}</p>
-                    <p className="detail-price">{product.price}</p>
+                    <p className="detail-price">${product.price}</p>
                 </div>
 
                 <div className="detail-button">

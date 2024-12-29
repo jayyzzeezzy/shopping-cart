@@ -44,10 +44,6 @@ function Shop() {
                     );
                 })
                 }
-                {/* use map to spit out <li> */}
-                <li>one</li>
-                <li>bar</li>
-                <li>baz</li>
                 
             </ul>
         </>

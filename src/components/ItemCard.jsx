@@ -22,12 +22,11 @@ function ItemCard({
                 className="product-image" 
                 />
                 <div className="card-info">
-                    <p>{id}</p>
                     <p className="product-name">
                         {name}
                     </p>
                     <p className="product-price">
-                        {price}
+                        ${price}
                     </p>
                 </div>
             </Link>
