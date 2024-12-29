@@ -52,8 +52,8 @@ function ModalItems({
 
     return (
         <>
-        <h3>Items</h3>
-        <h3>{subtotal}</h3>
+        <h3>Subtotal</h3>
+        <h3>${subtotal}</h3>
         
         <ul>
             {cartList.map((item) => {
