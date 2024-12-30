@@ -55,26 +55,33 @@ function ModalItems({
 
     return (
         <>
-        <h3>Subtotal</h3>
-        <h3>${Math.round(subtotal * 100) /100}</h3>
+        <div className={styles.subtotal}>
+            <h3>Subtotal</h3>
+            <h3>${Math.round(subtotal * 100) /100}</h3>
+        </div>
         
-        <ul>
+        <ul className={styles.itemsWrapper}>
             {cartList.map((item) => {
                 // if (!item) return null;
                 
                 return (
                     <li className={styles.modalItem} key={item.id}>
-                        <img src={item.img} alt="" />
-                        <p>${item.price}</p>
-                        <div className="modalItemEdit" id={item.id}>
-                            {/* remove decrement if quantity is 1 */}
-                            {(item.quantity == 0) ? null : (<button onClick={(e) => decItem(e)}>-</button>)}
-                            <p>{item.quantity}</p>
-                            <button onClick={(e) => incItem(e)}>+</button>
+                        <div className={styles.itemLeft}>
+                            <img src={item.img} alt="" />
                         </div>
-                        <div className="modalItemDelete" id={item.id}>
+                        
+                        <div className={styles.itemMidle} id={item.id}>
+                            <p>${item.price}</p>
+                            <div className={styles.quantityAdjust}>
+                                {/* remove decrement if quantity is 1 */}
+                                {(item.quantity == 0) ? null : (<button className={styles.decrementBtn} onClick={(e) => decItem(e)}>-</button>)}
+                                <p className={styles.quantity}>{item.quantity}</p>
+                                <button className={styles.incrementBtn} onClick={(e) => incItem(e)}>+</button>
+                            </div>
+                        </div>
+                        <div className={styles.itemRight} id={item.id}>
                             {/* using unicode (&#128465;) for the trash can icon */}
-                            <button onClick={(e) => delItem(e)}>&#128465;</button>
+                            <button className={styles.deleteBtn} onClick={(e) => delItem(e)}>&#128465;</button>
                         </div>
                     </li>
                 )

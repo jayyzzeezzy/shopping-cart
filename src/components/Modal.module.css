@@ -32,8 +32,5 @@
 
 
 .modalItems {
-    display: block;
     max-height: 100vh;
-    overflow: scroll;
-    padding: 40px;
 }
