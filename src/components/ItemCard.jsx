@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import styles from "./Shop.module.css";
 
 function ItemCard({
     id,
@@ -21,11 +22,11 @@ function ItemCard({
                 alt="" 
                 className="product-image" 
                 />
-                <div className="card-info">
-                    <p className="product-name">
+                <div className={styles.cardInfo}>
+                    <p className={styles.productName}>
                         {name}
                     </p>
-                    <p className="product-price">
+                    <p className={styles.productPrice}>
                         ${price}
                     </p>
                 </div>

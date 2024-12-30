@@ -1,0 +1,38 @@
+.shopHeading {
+    text-align: center;
+    margin: 20px;
+}
+
+.itemGridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.itemCard {
+    list-style: none;
+    box-shadow: 0px 0px 10px 0px gray;
+}
+
+.itemCard > a {
+    color: black;
+}
+
+.itemCard > a:hover {
+    background-color: transparent;
+}
+
+
+li > a > img {
+    min-width: 350px;
+    height: 300px;
+    aspect-ratio: 2/3;
+    object-fit: scale-down;
+    display: flex;
+    justify-self: center;
+}
+
+.cardInfo {
+    padding: 20px;
+    font-size: 1rem;
+}
+

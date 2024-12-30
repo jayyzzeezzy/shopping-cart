@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
+import styles from "./Shop.module.css";
 
 function Shop() {
     const [fakeStoreAPI, setFakeStoreAPI] = useState([]);
@@ -25,12 +26,12 @@ function Shop() {
 
     return (
         <>
-            <h1>SHOP</h1>
-            <ul className="item-grid-container">
+            <h1 className={styles.shopHeading}>SHOP</h1>
+            <ul className={styles.itemGridContainer}>
                 {fakeStoreAPI.map((item) => {
                     return (
                         <>
-                        <li className="item-card" key={item.id} id={item.id}>
+                        <li className={styles.itemCard} key={item.id} id={item.id}>
                             {/* pass item info via props */}
                             <ItemCard 
                             id={item.id} 
