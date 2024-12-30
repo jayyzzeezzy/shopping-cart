@@ -1,7 +1,51 @@
+.productHeading {
+    text-align: center;
+    padding: 20px;
+}
+
 .detailContainer {
     position: relative;
+    display: flex;
+    margin: 0px 10vw;
+    gap: 40px;
 }
 
 .detailImage {
-    max-width: 300px;
+    max-width: 400px;
+    aspect-ratio: 2/3;
+    object-fit: scale-down;
+}
+
+.detailRight {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.detailName {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.detailPrice {
+    margin: 20px 0px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.addToCart {
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.addToCart:hover {
+    background-color: black;
+    color: white;
+}
+
+.detailDescription {
+    font-size: 1rem;
 }

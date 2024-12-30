@@ -53,31 +53,31 @@ function Product() {
 
     return (
         <>
-        <h1>Product</h1>
+        <h1 className={styles.productHeading}>Product</h1>
         <div className={styles.detailContainer} id={product.id}>
 
-            <div className="detail-left">
+            <div className={styles.detailLeft}>
                 <img src={product.image} alt="" className={styles.detailImage}/>
             </div>
 
-            <div className="detail-right">
-                <div className="detail-info">
-                    <p className="detail-name">{product.name}</p>
-                    <p className="detail-price">${product.price}</p>
+            <div className={styles.detailRight}>
+                <div className={styles.detailInfo}>
+                    <p className={styles.detailName}>{product.name}</p>
+                    <p className={styles.detailPrice}>${product.price}</p>
                 </div>
 
-                <div className="detail-button">
+                <div className={styles.detailButton}>
                     <button 
                     type="button" 
-                    className="add-to-cart" 
+                    className={styles.addToCart} 
                     onClick={() => {setIsOpen(true); addToCart()}}
                     >
                         Add to cart
                     </button>
                 </div>
 
-                <div className="detail-more">
-                    <p className="detail-description">{product.description}</p>
+                <div className={styles.detailMore}>
+                    <p className={styles.detailDescription}>{product.description}</p>
                 </div>
             </div>
         </div>
