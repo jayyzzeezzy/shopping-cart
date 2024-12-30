@@ -18,8 +18,10 @@ function Modal({
         <>
         <div className={styles.overlay} />
         <div className={styles.cart}>
-            <h3>Cart</h3>
-            <button onClick={onClose}>Close Cart</button>
+            <div className={styles.modalHeading}>
+                <h3>Cart</h3>
+                <button onClick={onClose}>Close</button>
+            </div>
             <div className={styles.modalItems}>
                 <ModalItems cartList={cartList} setCartList={setCartList} />
             </div>

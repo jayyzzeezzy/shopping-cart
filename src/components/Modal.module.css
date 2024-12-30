@@ -1,13 +1,3 @@
-.cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    padding: 20px;
-    overflow: scroll;
-}
-
 .overlay {
     position: fixed;
     left: 0;
@@ -16,6 +6,30 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 20px;
+    overflow: scroll;
+    min-width: 300px;
+}
+
+.modalHeading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalHeading > button {
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
+    padding: 2px;
+}
+
 
 .modalItems {
     display: block;
