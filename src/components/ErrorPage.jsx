@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import styles from "./ErrorPage.module.css";
 
 function ErrorPage() {
     return (
-        <div>
+        <div className={styles.errorPage}>
             {/* &apos; is the notation for apostrophe (') */}
             <h1>Oh no, this route doesn&apos;t exist!</h1>
             <Link to="/">

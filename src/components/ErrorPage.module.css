@@ -1,0 +1,9 @@
+.errorPage {
+    margin: 20px;
+}
+
+.errorPage > a {
+    color: black;
+    padding: 0px;
+    border: 1px solid black;
+}

@@ -1,0 +1,9 @@
+.productError {
+    margin: 20px;
+}
+
+.productError > a {
+    color: black;
+    padding: 0px;
+    border: 1px solid black;
+}

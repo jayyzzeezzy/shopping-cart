@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
+import styles from "./Cart.module.css";
 
 function Cart() {
     const [cartList, setCartList] = useOutletContext();
@@ -26,21 +27,21 @@ function Cart() {
     return (
         <>
         <div className="shoppingCartWrapper">
-            <div>
+            <div className={styles.cartHeading}>
                 <h1>Shopping Cart</h1>
-                <button className="clearAll" onClick={()=>clearAll()}>Clear All</button> 
+                <button className={styles.clearAll} onClick={()=>clearAll()}>Clear All</button> 
             </div>
             
-            <div>
+            <div className={styles.itemsList}>
                 {cartList.map((item) => {
                     return (
                         <>
-                        <div className="shoppingCartItem" key={item.id}>
-                            <div className="left">
+                        <div className={styles.shoppingCartItem} key={item.id}>
+                            <div className={styles.left}>
                                 <img src={item.img} alt="" />
                             </div>
                             
-                            <div className="right">
+                            <div className={styles.right}>
                                 <h5>{item.name}</h5>
                                 <p>{item.quantity}</p>
                                 <p>${item.price}</p>
@@ -52,8 +53,8 @@ function Cart() {
                     )
                 })}
             </div>
-            <div className="subtotal">
-                <h4>Subtotal</h4>
+            <div className={styles.subtotal}>
+                <h4>Subtotal: </h4>
                 {/* round to two decimal places */}
                 <p>${Math.round(subtotal * 100) /100}</p>
             </div>
