@@ -28,7 +28,7 @@ function Cart() {
         <>
         <div className="shoppingCartWrapper">
             <div className={styles.cartHeading}>
-                <h1>Shopping Cart</h1>
+                <h1>&quot; Cart &quot;</h1>
                 <button className={styles.clearAll} onClick={()=>clearAll()}>Clear All</button> 
             </div>
             
