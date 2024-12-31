@@ -21,7 +21,7 @@ function ModalItems({
     }, [cartList]);
 
     function incItem(e) {
-        const targetId = e.target.parentElement.id;
+        const targetId = e.target.id;
         setCartList((prevList) =>{
             const updatedList = prevList.map((item) => {
                 if (item.id == targetId) {
@@ -34,7 +34,7 @@ function ModalItems({
     }
 
     function decItem(e) {
-        const targetId = e.target.parentElement.id;
+        const targetId = e.target.id;
         setCartList((prevList) => {
             const updatedList = prevList.map((item) => {
                 if (item.id == targetId) {
@@ -47,7 +47,7 @@ function ModalItems({
 
 
     function delItem(e) {
-        const targetId = e.target.parentElement.id;
+        const targetId = e.target.id;
         setCartList((prevList) => {
             return prevList.filter((item) => item.id != targetId);
         })
@@ -70,18 +70,18 @@ function ModalItems({
                             <img src={item.img} alt="" />
                         </div>
                         
-                        <div className={styles.itemMidle} id={item.id}>
+                        <div className={styles.itemMidle}>
                             <p>${item.price}</p>
                             <div className={styles.quantityAdjust}>
                                 {/* remove decrement if quantity is 1 */}
-                                {(item.quantity == 0) ? null : (<button className={styles.decrementBtn} onClick={(e) => decItem(e)}>-</button>)}
+                                {(item.quantity == 0) ? null : (<button id={item.id} className={styles.decrementBtn} onClick={(e) => decItem(e)}>-</button>)}
                                 <p className={styles.quantity}>{item.quantity}</p>
-                                <button className={styles.incrementBtn} onClick={(e) => incItem(e)}>+</button>
+                                <button id={item.id} className={styles.incrementBtn} onClick={(e) => incItem(e)}>+</button>
                             </div>
                         </div>
-                        <div className={styles.itemRight} id={item.id}>
+                        <div className={styles.itemRight}>
                             {/* using unicode (&#128465;) for the trash can icon */}
-                            <button className={styles.deleteBtn} onClick={(e) => delItem(e)}>&#128465;</button>
+                            <button id={item.id} className={styles.deleteBtn} onClick={(e) => delItem(e)}>&#128465;</button>
                         </div>
                     </li>
                 )
