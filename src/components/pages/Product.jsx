@@ -1,6 +1,6 @@
 import { useLocation, useOutletContext } from "react-router-dom";
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal";
 import styles from './Product.module.css';
 
 function Product() {

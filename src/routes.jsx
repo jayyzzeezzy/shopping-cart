@@ -1,10 +1,10 @@
 import App from './App.jsx'
-import Shop from './components/Shop.jsx'
-import Product from './components/Product.jsx';
-import ErrorPage from './components/ErrorPage.jsx';
-import HomePage from './components/HomePage.jsx';
-import Cart from './components/Cart.jsx';
-import ProductError from './components/ProductError.jsx';
+import Shop from './components/pages/Shop.jsx'
+import Product from './components/pages/Product.jsx';
+import ErrorPage from './components/pages/ErrorPage.jsx';
+import HomePage from './components/pages/HomePage.jsx';
+import Cart from './components/pages/Cart.jsx';
+import ProductError from './components/pages/ProductError.jsx';
 
 const routes = [
   {

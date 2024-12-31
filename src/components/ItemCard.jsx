@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./Shop.module.css";
+import styles from "./pages/Shop.module.css";
 
 function ItemCard({
     id,
